@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <section>
+            <div>
+                <% books.forEach(function(book){ %>
+                    <h1>Start</h1>
+                    <div class="card">
+                        <img height="120" width="120" src="images/ice_cream.jpg">
+                        <h2> <%= book.book %> </h2>
+                        <author> <%= book.author %> </author>
+                        <price>$10</price>
+                    </div>
+                <% }) %>
+                
+            </div>
+        </section>
+        <section>
+            <form action="/newBook" method="POST">
+                <label for="book">Book name:</label><br>
+                <input type="text" id="book" name="book"><br>
+                <label for="author">Author name:</label><br>
+                <input type="text" id="author" name="author"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+        <section>
+            <h1>login</h1>
+            <button type="button"><a href="/login">Login</a></button>
+        </section>
+        <section></section>
+    </main>
+</body>
+</html>

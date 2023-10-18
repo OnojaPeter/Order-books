@@ -82,6 +82,9 @@ app.get("/public/css/style.css", (req, res) => {
 
 // importaion from models
 const Book = require ("./models/books");
+const loginPage = require ("./models/loginPage")
+const signupPage = require ("./models/signupPage")
+const homePage = require ("./models/homePage")
 // const Customer = require ("./models/customers");
 
 //importantation from controllers
@@ -91,32 +94,11 @@ const newBookPost = require ('./controllers/newBookPost');
 
 
 //Methods
-app.get("/",async function(req, res) {
-    try{
-        const books = await Book.find({});
-        res.render("index", {
-            books: books
-        });  
-    } catch(err) {
-        console.error(err);
-    }
-});
+app.get("/", homePage);
 
-app.get("/login", async function (req, res) {
-    try {
-        res.render("login");
-    } catch(err) {
-        console.error(err);
-    }
-})
+app.get("/login", loginPage)
 
-app.get("/signup", async function (req, res) {
-    try {
-        res.render("signup");
-    } catch(err) {
-        console.error(err);
-    }
-})
+app.get("/signup", signupPage)
 
 app.post("/signup", signupPost);
 

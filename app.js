@@ -87,6 +87,7 @@ const Book = require ("./models/books");
 //importantation from controllers
 const signupPost = require ('./controllers/signupPost');
 const loginPost = require ('./controllers/loginPost');
+const newBookPost = require ('./controllers/newBookPost');
 
 
 //Methods
@@ -121,22 +122,7 @@ app.post("/signup", signupPost);
 
 app.post("/login", loginPost);
 
-app.post("/newBook", async function (req, res){
-    try{
-        const bookName = req.body.book;
-        const authorName = req.body.author;
-
-        const book = new Book({
-            book: bookName,
-            author: authorName,
-        });
-        book.save();
-        console.log(req.body.book, req.body.author);
-        res.redirect("/");
-    } catch(err) {
-        console.error(err);
-    }
-})
+app.post("/newBook", newBookPost);
 
 
 app.listen(3000, function() {

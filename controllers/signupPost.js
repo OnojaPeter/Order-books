@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const Customer = require ("../models/customers.js");
 
 async function signupPost(req, res) {

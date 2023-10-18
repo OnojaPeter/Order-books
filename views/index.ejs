@@ -14,20 +14,22 @@
                     <h1>Start</h1>
                     <div class="card">
                         <img height="120" width="120" src="images/ice_cream.jpg">
-                        <h2> <%= book.book %> </h2>
+                        <h2> <%= book.title %> </h2>
                         <author> <%= book.author %> </author>
-                        <price>$10</price>
+                        <price>$ <%= book.price %> </price>
                     </div>
                 <% }) %>
                 
             </div>
         </section>
-        <section>
+        <section style="margin-top: 70px;">
             <form action="/newBook" method="POST">
-                <label for="book">Book name:</label><br>
-                <input type="text" id="book" name="book"><br>
+                <label for="title">Book name:</label><br>
+                <input type="text" id="title" name="title"><br>
                 <label for="author">Author name:</label><br>
                 <input type="text" id="author" name="author"><br>
+                <label for="price">Price:</label><br>
+                <input type="text" id="price" name="price"><br>
                 <input type="submit" value="Submit">
             </form>
         </section>

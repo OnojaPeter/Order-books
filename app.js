@@ -4,9 +4,15 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
-// require('dotenv').config();
 
-// const secretKey = process.env.SECRET_KEY;
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+
+require('dotenv').config();
+
+const secretKey = process.env.SECRET_KEY;
+const tokenKey = process.env.TOKEN_KEY;
+
 
 const app = express();
 

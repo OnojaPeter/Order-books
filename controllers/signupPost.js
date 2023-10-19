@@ -41,7 +41,7 @@ async function signupPost(req, res) {
         console.log(token)
         customer.token = token;
     
-        // res.redirect(`login/${customer.id}`)
+        // res.redirect(`/${customer.id}`)
 
 
         res.redirect("/");
